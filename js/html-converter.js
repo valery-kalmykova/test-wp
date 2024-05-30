@@ -1,7 +1,7 @@
-import { Jodit } from "../node_modules/jodit/esm/index.js";
-import "../node_modules/jodit/esm/plugins/fullsize/fullsize.js";
-import "../node_modules/jodit/esm/plugins/iframe/iframe.js";
-import "../node_modules/jodit/esm/plugins/source/source.js";
+import { Jodit } from "https://github.com/valery-kalmykova/test-wp/tree/main/node_modules/jodit/esm/index.js";
+import "https://github.com/valery-kalmykova/test-wp/tree/main/node_modules/jodit/esm/plugins/fullsize/fullsize.js";
+import "https://github.com/valery-kalmykova/test-wp/tree/main/node_modules/jodit/esm/plugins/iframe/iframe.js";
+import "https://github.com/valery-kalmykova/test-wp/tree/main/node_modules/jodit/esm/plugins/source/source.js";
 
 const uploadFile = document.querySelector("#document");
 const themeBtn = document.querySelector("#theme-btn");
