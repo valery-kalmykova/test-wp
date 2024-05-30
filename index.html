@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Utils</title>
+	<link rel="icon" type="image/x-icon" href="./img/wpt.svg">
+	<script type="text/javascript" src="./js/config.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/xlsx.min.js"></script>
+	<script type="text/javascript" src="./js/tribute.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"> <!-- Main Custom Styles -->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/theme-light.css"> -->
+</head>
+<body>
+	<section>
+		<nav class="row navbar">
+			<div class="col sm inline center nav-logo">
+				<img src="./img/wpt.svg" width="40" alt="WP Tools Lite">
+				<b>&nbsp;LITE</b>
+			</div>
+			<ul class="col lg inline">
+				<li class="nav-item"><a class="nav-link" href="./">URL Utils</a></li>
+				<li class="nav-item"><a class="nav-link" href="./html-converter.html">HTML Converter</a></li>
+				<!-- <li class="nav-item"><a class="nav-link" href="./pl2-checker.html">PL2 CHECKER</a></li> -->
+				
+			</ul>
+			<div class="col sm inline nav-help center">
+				<input id="theme-btn" type="checkbox" checked>
+				<label class="check" for="theme-btn">Switch Theme</label>
+				<a href="https://github.com/dev5eal/wptools-lite/blob/main/README.md" target="_blank">Help & Guides</a>
+			</div>
+		</nav>
+	</section>
+	<section id="navigator-tab">
+		<div class="row">
+			<div class="col md card controls">
+				<div class="row vcenter">
+					<div class="col sm">
+						<label class="label">Target: </label>
+					</div>
+					<div class="col sm inline wrap">
+						<div id="pub-target">
+							<input class="pub-target" type="radio" name="pub-target" id="live" value="live" checked="true"><label for="live">Live</label>
+							<input class="pub-target" type="radio" name="pub-target" id="rc" value="rc"><label for="rc">RC</label>
+							<input class="pub-target" type="radio" name="pub-target" id="branch" value="branch"><label for="branch">Branch</label>
+							<input class="pub-target" type="radio" name="pub-target" id="test" value="test"><label for="test">SE-Test</label>
+							<input class="pub-target" type="radio" name="pub-target" id="license" value="license"><label for="license">License</label>
+							<input class="pub-target" type="radio" name="pub-target" id="editor" value="editor"><label for="editor">Site Editor</label>
+						</div>
+					</div>
+					<div class="col lg end">
+						<button class="green" id="navigator-go-btn" title="Generate table with links">Get Links</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col sm">
+						<label for="sites">Locales</label>
+						<select class="wide" id='sites' name='sites' size="29" multiple></select>
+						<button id="navigator-scope-btn" title="Use input field to override and highlight locales in scope">Scope Override</button>
+					</div>
+					<div class="col lg">
+						<label for="navigator-input">Page Path</label>
+						<textarea class="wide" id="navigator-input" placeholder="Page Path&#xD;ex: /home-security&#xD;&#xD;Use&Tab;'@'&Tab; for suggestions of common pages...&#xD;Use&Tab;'?'&Tab;for suggestions of LRC verdict pages...&#xD;&#xD;Also use this field for scope override..."></textarea>
+						<div id="navigator-input-list" class="mention-container"></div>
+						<div class="row center">
+							<div class="col lg inline wrap">
+								<button id="navigator-trim-btn" title="Remove domain part, up to first /">Trim Urls</button>
+								<button id="navigator-uniq-btn" title="Remove duplicate lines from input">Filter Unique</button>
+								<button id="navigator-links-btn" title="Use it to extact links from text inside input field">Extract Links</button>
+								<button id="navigator-o2i-btn" title="Copy content of output to input field">Output as Input</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row vcenter">
+					<div class="col sm">
+						<label class="label" for="navigator-branch">Branch: </label>
+					</div>
+					<div class="col lg">
+						<input class="fill" type="text" placeholder="Branch Name (default is Master)" id="navigator-branch" autocomplete="off" list="navigator-branch-list">
+					</div>
+				</div>
+				<div class="row wrap">
+					<div class="col md inline vcenter">
+						<label class="label" for="navigator-curdate">CurDate:</label>
+						<input type="date" id="navigator-curdate">
+					</div>
+					<div class="col md inline vcenter">
+						<select id="navigator-geo">
+							<option value="ipcountry" selected>IpCountry</option>
+							<option value="clientgeoip">GeoIP</option>
+						</select>
+						<input style="width: 40px" type="text" placeholder="XX" id="navigator-geocode" autocomplete="off" list="navigator-geocode-list" maxlength="2">
+						<datalist id="navigator-geocode-list"></datalist>
+						<label for="navigator-platform">Platform</label>
+						<select id="navigator-platform">
+							<option value="" selected>Off</option>
+							<option value="Windows">Windows</option>
+							<option value="MacOS">MacOS</option>
+							<option value="Linux">Linux</option>
+							<option value="Android">Android</option>
+							<option value="iOS">iOS</option>
+						</select>
+					</div>
+				</div>
+				<div class="row vcenter">
+					<div class="col sm">
+						<label class="label">Parameters:</label>
+					</div>
+					<div class="col lg inline spread">
+						<input id="navigator-redirects" type="checkbox">
+						<label class="check" for="navigator-redirects">No&nbsp;Redirects</label>
+						<input id="navigator-mmzr" type="checkbox">
+						<label class="check" for="navigator-mmzr">No&nbsp;Maxymiser</label>
+						<input id="navigator-gtm" type="checkbox">
+						<label class="check" for="navigator-gtm">No&nbsp;GTM</label>
+						<input id="navigator-omni" type="checkbox">
+						<label class="check" for="navigator-omni">No&nbsp;Omniture</label>
+					</div>
+				</div>
+			</div>
+			<div class="col lg card output" id="output"></div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		run();
+	</script>
+</body>
+</html>

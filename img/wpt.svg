@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(187.417297, 187.417297, 187.417297, -187.417297, -104.129517, -1363.426025)" spreadMethod="pad" id="linearGradient74">
+      <stop style="stop-opacity:1;stop-color:#265951" offset="0" id="stop70"/>
+      <stop style="stop-opacity:1;stop-color:#00a88e" offset="1" id="stop72"/>
+    </linearGradient>
+  </defs>
+  <path d="M 187.924 233.653 L 244.508 129.744 C 248.476 122.457 248.716 113.711 245.152 106.217 L 207.287 26.604 C 202.843 17.261 193.27 11.456 182.931 11.836 L 72.611 15.884 C 63.446 16.22 55.14 21.376 50.772 29.44 L 11.892 101.22 C 8.727 107.063 7.927 113.897 9.656 120.313 L 33.924 210.304 C 36.566 220.1 44.68 227.453 54.687 229.121 L 160.902 246.824 C 171.795 248.639 182.643 243.352 187.924 233.653 Z" style="fill:#00a88e;stroke:#00a88e;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path66"/>
+  <text style="fill: rgb(255, 255, 255); font-family: &quot;Kaspersky Sans Display&quot;; font-size: 130px; font-weight: 300; white-space: pre; text-anchor: middle;" x="128.0" y="182.0">WPT</text>
+</svg>

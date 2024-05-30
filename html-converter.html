@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>URL Utils</title>
+	<link rel="icon" type="image/x-icon" href="./img/wpt.svg">
+	<link rel="stylesheet" type="text/css" href="./css/style.css"> <!-- Main Custom Styles -->
+	
+	<link rel="stylesheet" href="./node_modules/jodit/es2021/jodit.min.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="./css/theme-light.css"> -->
+</head>
+
+<body>
+	<section>
+		<nav class="row navbar">
+			<div class="col sm inline center nav-logo">
+				<img src="./img/wpt.svg" width="40" alt="WP Tools Lite">
+				<b>&nbsp;LITE</b>
+			</div>
+			<ul class="col lg inline">
+				<li class="nav-item"><a class="nav-link" href="./">URL Utils</a></li>
+				<li class="nav-item"><a class="nav-link" href="./html-converter.html">HTML Converter</a></li>
+				<!-- <li class="nav-item"><a class="nav-link" href="./pl2-checker.html">PL2 CHECKER</a></li> -->
+			</ul>
+			<div class="col sm inline nav-help center">
+				<input id="theme-btn" type="checkbox" checked>
+				<label class="check" for="theme-btn">Switch Theme</label>
+				<a href="https://github.com/dev5eal/wptools-lite/blob/main/README.md" target="_blank">Help & Guides</a>
+			</div>
+		</nav>
+	</section>
+	<section id="navigator-tab">
+		<div class="row">
+			<div class="col card controls">
+				<div class="row vcenter">
+					<div class="col sm">
+						<label class="label">Select a .docx file: </label>
+					</div>
+					<div class="col sm inline wrap">
+						<div id="pub-target">
+							<input id="document" type="file" accept=".doc,.docm,.docx" />
+						</div>
+					</div>
+				</div>
+				<div class="row vcenter">
+					<div class="col sm">
+						<label class="label">Cleanup html: </label>
+					</div>
+					<div class="col sm inline wrap">
+						<div>
+							<button class="green" id="sanitize">Sanitize</button>
+							<button class="green" id="remove-images">Remove images</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col lg">
+						<div class="editor">
+							<textarea id="editor"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<script type="importmap">
+		{
+			"imports": {
+				"autobind-decorator": "https://unpkg.com/autobind-decorator@2.4.0/lib/esm/index.js"
+			}
+		}
+	</script>
+	<script type="text/javascript" src="./js/config.js"></script>
+	<script type="text/javascript" src="./js/xlsx.min.js"></script>
+	<script type="text/javascript" src="./js/tribute.js"></script>
+	<script type="text/javascript" src="./js/mammoth.browser.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="module" src="./js/html-converter.js"></script>
+</body>
+
+</html>
